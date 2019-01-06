@@ -9,9 +9,8 @@
   "scripts": {
     "pretest": "npm run lint",
     "test": "tap test/**/*.test.js",
-    "start": "node server.js",
-    "lint": "eslint . --fix",
-    "dev": "nodemon server.js | pino-colada"
+    "start": "nodemon server.js | pino-colada",
+    "lint": "eslint --fix"
   },
   "author": "TTG International",
   "dependencies": {
@@ -31,6 +30,19 @@
     "nodemon": "^1.18.9",
     "pino-colada": "^1.4.4",
     "prettier": "^1.15.3",
-    "tap": "^12.1.1"
+    "tap": "^12.1.1",
+    "husky": "^1.3.1",
+    "lint-staged": "^8.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
