@@ -12,6 +12,9 @@
     "start": "nodemon server.js | pino-colada",
     "lint": "eslint --fix ."
   },
+  "engines": {
+    "node": "^10.x"
+  },
   "author": "TTG International",
   "dependencies": {
     "dotenv": "6.2.0",
