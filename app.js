@@ -1,12 +1,9 @@
 const path = require('path');
 const AutoLoad = require('fastify-autoload');
-const cors = require('fastify-cors');
-const helmet = require('fastify-helmet');
 
 module.exports = function(fastify, opts, next) {
   // Place here your custom code!
-  fastify.register(cors);
-  fastify.register(helmet);
+  fastify.register(require('fastify-cors')).register(require('fastify-helmet'));
 
   // Do not touch the following lines
 
