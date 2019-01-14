@@ -7,8 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "pretest": "npm run lint",
     "test": "tap test/**/*.test.js",
+    "test:coverage": "tap --cov test/**/*.test.js",
     "start": "nodemon server.js | pino-colada",
     "lint": "eslint --fix ."
   },
@@ -40,7 +40,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && tap test/**/*.test.js"
+      "pre-commit": "lint-staged && npm run test"
     }
   },
   "lint-staged": {
