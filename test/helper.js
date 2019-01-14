@@ -3,12 +3,29 @@
 
 const Fastify = require('fastify');
 const fp = require('fastify-plugin');
+const tap = require('tap');
 const App = require('../app');
+
+const { beforeEach, tearDown } = tap;
+
+beforeEach(async function() {
+  // logic before each tests
+  // such cleanup db
+});
+
+tearDown(async function() {
+  // logic after each test
+});
 
 // Fill in this config with all the configurations
 // needed for testing the application
 function config() {
-  return {};
+  return {
+    auth: {
+      secret: 'averyverylongsecret',
+      user: { username: 'dummy', password: 'dummy' }
+    }
+  };
 }
 
 // automatically build and tear down our instance
@@ -26,7 +43,4 @@ function build(t) {
   return app;
 }
 
-module.exports = {
-  config,
-  build
-};
+module.exports = { build };

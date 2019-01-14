@@ -13,7 +13,7 @@
     "lint": "eslint --fix ."
   },
   "engines": {
-    "node": "^10.x"
+    "node": "10.x"
   },
   "author": "TTG International",
   "dependencies": {
@@ -22,6 +22,7 @@
     "fastify-autoload": "^0.6.0",
     "fastify-cors": "next",
     "fastify-helmet": "^3.0.0",
+    "fastify-jwt": "^0.9.1",
     "fastify-plugin": "^1.4.0"
   },
   "devDependencies": {
@@ -39,7 +40,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged && tap test/**/*.test.js"
     }
   },
   "lint-staged": {

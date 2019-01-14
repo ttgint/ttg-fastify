@@ -3,7 +3,12 @@ const AutoLoad = require('fastify-autoload');
 
 module.exports = function(fastify, opts, next) {
   // Place here your custom code!
-  fastify.register(require('fastify-cors')).register(require('fastify-helmet'));
+  fastify
+    .register(require('fastify-cors'))
+    .register(require('fastify-helmet'))
+    .register(require('fastify-jwt'), {
+      secret: opts.auth ? opts.auth.secret : process.env.SECRET || 'youshouldspecifyalongsecret'
+    });
 
   // Do not touch the following lines
 
@@ -19,7 +24,7 @@ module.exports = function(fastify, opts, next) {
   // define your routes in one of these
   fastify.register(AutoLoad, {
     dir: path.join(__dirname, 'services'),
-    options: Object.assign({}, opts)
+    options: Object.assign({ prefix: '/api' }, opts)
   });
 
   // Make sure to call next when done
