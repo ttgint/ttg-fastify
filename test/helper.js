@@ -8,12 +8,12 @@ const App = require('../app');
 
 const { beforeEach, tearDown } = tap;
 
-beforeEach(async function() {
+beforeEach(async () => {
   // logic before each tests
   // such cleanup db
 });
 
-tearDown(async function() {
+tearDown(async () => {
   // logic after each test
 });
 

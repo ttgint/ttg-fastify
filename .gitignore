@@ -50,6 +50,7 @@ profile-*
 
 # vscode
 .vscode
+.vs
 *code-workspace
 
 # clinic

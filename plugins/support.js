@@ -1,7 +1,5 @@
 const fp = require('fastify-plugin');
 
-module.exports = fp(async function(fastify) {
-  fastify.decorate('someSupport', function() {
-    return 'hugs';
-  });
+module.exports = fp(async fastify => {
+  fastify.decorate('someSupport', () => 'hugs');
 });
