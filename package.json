@@ -9,7 +9,8 @@
   "scripts": {
     "test": "tap test/**/*.test.js",
     "test:coverage": "tap --cov test/**/*.test.js",
-    "start": "nodemon server.js | pino-colada",
+    "start": "node server.js",
+    "dev": "nodemon server.js | pino-colada",
     "lint": "eslint --fix ."
   },
   "engines": {
