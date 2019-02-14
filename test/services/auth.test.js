@@ -44,7 +44,7 @@ test('should not accept empty username or password', async t => {
 
   t.notOk(payload.token);
   t.is(res.statusCode, 400);
-  t.is(payload.message, 'body.username should NOT be shorter than 1 characters');
+  t.is(payload.message, 'body.username should NOT be shorter than 1 characters, body.password should NOT be shorter than 1 characters');
 });
 
 test('should not accept missing username or password', async t => {
@@ -60,5 +60,5 @@ test('should not accept missing username or password', async t => {
 
   t.notOk(payload.token);
   t.is(res.statusCode, 400);
-  t.is(payload.message, `body should have required property 'username'`);
+  t.is(payload.message, `body should have required property 'username', body should have required property 'password'`);
 });
