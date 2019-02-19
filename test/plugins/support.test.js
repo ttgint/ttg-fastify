@@ -1,10 +1,8 @@
 const { test } = require('tap');
-const Fastify = require('fastify');
-const Support = require('../../plugins/support');
+const { build } = require('../helper');
 
 test('support works standalone', async t => {
-  const fastify = Fastify();
-  fastify.register(Support);
+  const fastify = build(t);
 
   await fastify.ready();
   t.equal(fastify.someSupport(), 'hugs');
