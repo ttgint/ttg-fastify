@@ -19,10 +19,10 @@
   },
   "author": "TTG International",
   "dependencies": {
-    "dotenv": "6.2.0",
-    "fastify": "next",
+    "dotenv": "^6.2.0",
+    "fastify": "^2.0.0",
     "fastify-autoload": "^0.6.0",
-    "fastify-cors": "next",
+    "fastify-cors": "^2.0.0",
     "fastify-helmet": "^3.0.0",
     "fastify-jwt": "^0.9.1",
     "fastify-plugin": "^1.5.0"
