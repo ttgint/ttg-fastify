@@ -67,4 +67,4 @@ examples/typescript-server.js
 test/types/index.js
 
 # env files
-*.env
+*.env*
