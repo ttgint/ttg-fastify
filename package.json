@@ -35,7 +35,7 @@
     "nodemon": "^1.18.10",
     "pino-colada": "^1.4.4",
     "prettier": "^1.16.4",
-    "tap": "^12.5.3"
+    "tap": "^14.2.3"
   },
   "eslintConfig": {
     "extends": "@ttgint"
